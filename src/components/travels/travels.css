@@ -1,0 +1,221 @@
+.travels {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.travels h1 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  line-height: 1.3;
+  color: #333;
+}
+
+.highlight {
+  color: #e63946;
+  font-weight: 700;
+}
+
+.places {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  
+}
+
+.card {
+  background: rgb(83, 194, 39);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.card h2 {
+  padding: 1rem;
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.travel {
+  margin-top: 2rem;
+}
+
+.travel a {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: linear-gradient(135deg, #50da3ea2, #648feb);
+  color: rgb(118, 231, 74);
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.travel a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(230, 57, 70, 0.3);
+  background: linear-gradient(135deg, #d62839, #e63946);
+}
+
+/* Small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .travels {
+    padding: 1.5rem 1rem;
+    margin-top: 60px;
+  }
+  
+  .travels h1 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
+  }
+  
+  .places {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+  
+  .card img {
+    height: 180px;
+  }
+  
+  .card h2 {
+    padding: 0.8rem;
+    font-size: 1.1rem;
+  }
+  
+  .travel a {
+    padding: 0.7rem 1.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Medium devices (tablets, 600px to 768px) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .places {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    margin-top: 50px;
+  }
+  
+  .travels h1 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Large devices (laptops/desktops, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .travels {
+    padding: 3rem 2rem;
+    margin-top: 50px;
+  }
+  
+  .travels h1 {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .places {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  .card img {
+    height: 220px;
+  }
+}
+
+/* Extra large devices (large desktops, 1024px and up) */
+@media only screen and (min-width: 1024px) {
+  .places {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .travels h1 {
+    font-size: 2.5rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Extra extra large devices (1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .travels {
+    padding: 4rem 2rem;
+  }
+  
+  .card img {
+    height: 240px;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .travel a {
+    transition: none;
+  }
+}
+
+/* High contrast support */
+@media (prefers-contrast: high) {
+  .card {
+    border: 2px solid #000;
+  }
+  
+  .highlight {
+    color: #000;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .travels {
+    background-color: #1a1a1a;
+    color: #fff;
+  }
+  
+  .travels h1 {
+    color: #fff;
+  }
+  
+  .card {
+    background: #2d2d2d;
+    border: 1px solid #444;
+  }
+  
+  .card h2 {
+    color: #fff;
+  }
+  
+  .highlight {
+    color: #ff6b6b;
+  }
+}
+#name h2 {
+  color: #095e8fe5;       /* orange */
+  font-weight: 600;
+  transition: color 0.3s ease;
+}

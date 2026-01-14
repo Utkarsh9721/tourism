@@ -1,0 +1,281 @@
+/* RESET & BASE STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* HOME SECTION - FIXED FOR HEADER */
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #ebe6e6;
+    gap: 1.5rem;
+    overflow: hidden;
+    margin: 0;
+    padding: 2rem 1rem;
+    /* Background with overlay for better text readability */
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)),
+        url('https://images.unsplash.com/photo-1580818135730-ebd11086660b?q=80&w=1157&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    text-align: center;
+    /* REMOVE negative margin and add padding for header */
+    padding-top: 80px; /* Space for fixed header */
+}
+
+/* Text styling with better mobile optimization */
+.home h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    padding: 0 1rem;
+}
+
+.home h1 .highlight {
+    color: #c0f0f5;
+    background: linear-gradient(45deg, #c0f0f5, #a8d8ea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.home h2 {
+    font-size: clamp(1.2rem, 3vw, 1.7rem);
+    font-weight: 500;
+    color: #ffb8b8;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+    padding: 0 1rem;
+}
+
+.home p {
+    font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+    line-height: 1.7;
+    color: #ffffff;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    text-align: center;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    padding: 0 1rem;
+}
+
+/* Button styling with touch-friendly size */
+.explore button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: linear-gradient(45deg, #8a8809, #a5a62c);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: clamp(0.8rem, 3vw, 0.9rem) clamp(1.5rem, 4vw, 2rem);
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: 50px;
+    box-shadow: 0 4px 15px rgba(138, 136, 9, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.explore button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.explore button:hover::before {
+    left: 100%;
+}
+
+.explore button:hover {
+    background: linear-gradient(45deg, #ff4c4c, #ff6b6b);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 76, 76, 0.4);
+}
+
+.explore button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(255, 76, 76, 0.4);
+}
+
+/* Tablet Devices (768px and below) */
+@media screen and (max-width: 768px) {
+    .home {
+        padding: 1.5rem 1rem;
+        padding-top: 70px; /* Adjusted for mobile header */
+        gap: 1.2rem;
+        background-attachment: scroll;
+    }
+
+    .home h1 {
+        margin-bottom: 0.8rem;
+        line-height: 1.3;
+    }
+
+    .home h2 {
+        margin-bottom: 0.8rem;
+    }
+
+    .home p {
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+
+    .explore button {
+        min-height: 48px;
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+/* Mobile Devices (480px and below) */
+@media screen and (max-width: 480px) {
+    .home {
+        padding: 1rem 0.8rem;
+        padding-top: 70px; /* Space for mobile header */
+        gap: 1rem;
+        min-height: 100vh;
+        justify-content: center; /* Changed from flex-start to center */
+    }
+
+    .home h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.6rem;
+        padding: 0 0.5rem;
+    }
+
+    .home h2 {
+        font-size: 1.1rem;
+        margin-bottom: 0.6rem;
+        padding: 0 0.5rem;
+    }
+
+    .home p {
+        font-size: 0.9rem;
+        margin-bottom: 1.2rem;
+        padding: 0 0.5rem;
+        line-height: 1.5;
+    }
+
+    .explore button {
+        min-height: 46px;
+        padding: 0.8rem 1.2rem;
+        font-size: 0.95rem;
+        max-width: 250px;
+    }
+}
+
+/* Small Mobile Devices (360px and below) */
+@media screen and (max-width: 360px) {
+    .home {
+        padding: 0.8rem 0.5rem;
+        padding-top: 65px; /* Less padding for very small screens */
+        gap: 0.8rem;
+    }
+
+    .home h1 {
+        font-size: 1.6rem;
+        padding: 0 0.3rem;
+    }
+
+    .home h2 {
+        font-size: 1rem;
+        padding: 0 0.3rem;
+    }
+
+    .home p {
+        font-size: 0.85rem;
+        padding: 0 0.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .explore button {
+        min-height: 44px;
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Landscape Mode Optimization */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .home {
+        min-height: 120vh;
+        padding: 1rem;
+        padding-top: 70px;
+        gap: 0.8rem;
+    }
+
+    .home h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .home p {
+        margin-bottom: 0.8rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Ensure header doesn't overlap content */
+.main-content {
+    margin-top: 0; /* Remove any main content margin since we're using padding */
+}
+
+/* High-resolution displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .home {
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)),
+            url('https://images.unsplash.com/photo-1580818135730-ebd11086660b?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .explore button {
+        transition: none;
+    }
+    
+    .explore button::before {
+        display: none;
+    }
+    
+    .home {
+        background-attachment: scroll;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .home {
+        background: 
+            linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),
+            url('https://images.unsplash.com/photo-1580818135730-ebd11086660b?q=80&w=1157&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
+        background-size: cover;
+    }
+}

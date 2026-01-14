@@ -1,0 +1,467 @@
+/* HEADER CSS - MOBILE FIRST APPROACH */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(53, 124, 36, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 0.8rem 1rem;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo Section */
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+    border-radius: 8px;
+}
+
+.site-name {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Three Dots Menu */
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+    z-index: 1100;
+}
+
+.menu-icon:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.dot {
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+/* Navigation - Enhanced for small screens */
+.navbar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: rgba(36, 84, 124, 0.98);
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    padding: 80px 1.5rem 2rem;
+    transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 900;
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* Enable scrolling if needed */
+}
+
+.navbar.active {
+    right: 0;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1rem;
+    margin: 0.4rem 0;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 44px; /* Minimum touch target size */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateX(-5px);
+    color: #ffcc00;
+}
+
+/* Overlay when menu is open */
+.navbar.active::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+/* Close button for mobile */
+.close-menu {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-menu:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Main content adjustment for fixed header */
+.main-content {
+    margin-top: 80px;
+}
+
+/* Desktop Styles */
+@media (min-width: 769px) {
+    .header {
+        padding: 0.5rem 2rem;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    .navbar {
+        position: static;
+        width: auto;
+        height: auto;
+        background: transparent;
+        backdrop-filter: none;
+        flex-direction: row;
+        padding: 0;
+        box-shadow: none;
+        right: 0;
+        overflow-y: visible;
+    }
+
+    .navbar a {
+        padding: 0.5rem 1.2rem;
+        margin: 0 0.2rem;
+        font-size: 0.95rem;
+        border-radius: 25px;
+        position: relative;
+        overflow: hidden;
+        min-height: auto;
+    }
+
+    .navbar a::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: #ffcc00;
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+    }
+
+    .navbar a:hover::before {
+        width: 80%;
+    }
+
+    .navbar a:hover {
+        transform: translateY(-2px);
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .site-name {
+        font-size: 1.6rem;
+    }
+
+    .logo {
+        height: 45px;
+    }
+
+    .main-content {
+        margin-top: 70px;
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1024px) {
+    .navbar a {
+        padding: 0.6rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .site-name {
+        font-size: 1.8rem;
+    }
+}
+
+/* Enhanced Small Mobile Devices (480px and below) */
+@media (max-width: 480px) {
+    .header {
+        padding: 0.7rem 1rem;
+        height: 60px;
+    }
+
+    .navbar {
+        width: 100%; /* Full width on very small screens */
+        max-width: 300px;
+        padding: 70px 1rem 1rem; /* Reduced padding */
+    }
+
+    .navbar a {
+        padding: 0.7rem 0.8rem;
+        margin: 0.3rem 0;
+        font-size: 0.95rem;
+        min-height: 42px;
+    }
+
+    .site-name {
+        font-size: 1.1rem;
+    }
+
+    .logo {
+        height: 32px;
+    }
+
+    .main-content {
+        margin-top: 60px;
+    }
+}
+
+/* Extra Small Mobile Devices (360px and below) */
+@media (max-width: 360px) {
+    .header {
+        padding: 0.6rem 0.8rem;
+        height: 55px;
+    }
+
+    .navbar {
+        width: 100%;
+        max-width: 280px;
+        padding: 60px 0.8rem 0.8rem; /* Even more compact */
+    }
+
+    .navbar a {
+        padding: 0.6rem 0.5rem;
+        margin: 0.25rem 0;
+        font-size: 0.9rem;
+        min-height: 40px;
+        border-radius: 8px;
+    }
+
+    .site-name {
+        font-size: 1rem;
+    }
+
+    .logo {
+        height: 30px;
+    }
+
+    .close-menu {
+        top: 0.8rem;
+        right: 0.8rem;
+        font-size: 1.3rem;
+        min-width: 40px;
+        min-height: 40px;
+    }
+
+    .main-content {
+        margin-top: 55px;
+    }
+}
+
+/* Very Small Mobile Devices (320px and below) - iPhone 5/SE */
+@media (max-width: 320px) {
+    .header {
+        padding: 0.5rem 0.6rem;
+        height: 50px;
+    }
+
+    .navbar {
+        padding: 55px 0.6rem 0.6rem;
+    }
+
+    .navbar a {
+        padding: 0.5rem 0.4rem;
+        margin: 0.2rem 0;
+        font-size: 0.85rem;
+        min-height: 38px;
+    }
+
+    .site-name {
+        font-size: 0.9rem;
+    }
+
+    .logo {
+        height: 28px;
+    }
+
+    .logo-section {
+        gap: 0.5rem;
+    }
+
+    .main-content {
+        margin-top: 50px;
+    }
+}
+
+/* Landscape Mode for Small Devices */
+@media (max-width: 480px) and (orientation: landscape) {
+    .navbar {
+        height: auto;
+        max-height: 80vh;
+        padding-top: 60px;
+        overflow-y: auto;
+    }
+
+    .navbar a {
+        padding: 0.5rem 0.8rem;
+        margin: 0.2rem 0;
+        min-height: 36px;
+    }
+}
+
+/* Animation for menu icon when active */
+.menu-icon.active .dot:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+    width: 20px;
+    height: 2px;
+    border-radius: 2px;
+}
+
+.menu-icon.active .dot:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.active .dot:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+    width: 20px;
+    height: 2px;
+    border-radius: 2px;
+}
+
+/* Add smooth transitions */
+.menu-icon,
+.navbar,
+.navbar a {
+    transition: all 0.3s ease;
+}
+
+/* Scrollbar styling for mobile menu */
+.navbar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.navbar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
+
+.navbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+}
+
+.navbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+/* Add this to your header.css */
+.navbar a.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    margin: 0.5rem 0;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.navbar a.nav-link:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateX(-5px);
+    color: #ffcc00;
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+    .navbar a.nav-link {
+        padding: 0.5rem 1.2rem;
+        margin: 0 0.2rem;
+        font-size: 0.95rem;
+        border-radius: 25px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .navbar a.nav-link::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: #ffcc00;
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+    }
+
+    .navbar a.nav-link:hover::before {
+        width: 80%;
+    }
+
+    .navbar a.nav-link:hover {
+        transform: translateY(-2px);
+        background: rgba(255, 255, 255, 0.1);
+    }
+}

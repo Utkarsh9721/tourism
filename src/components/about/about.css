@@ -1,0 +1,278 @@
+/* about.css */
+
+/* Base Styles */
+.about-page {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero Section */
+.about-hero {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+              url('https://images.unsplash.com/photo-1527838832700-5059252407fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.about-hero-content {
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.about-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.about-hero .lead {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+  font-weight: 300;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Main Content Section */
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+  gap: 40px;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text h2 {
+  font-size: 2.2rem;
+  color: #2c5530;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.about-text h2:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background-color: #4a9c5f;
+  border-radius: 2px;
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.cta-row {
+  display: flex;
+  gap: 15px;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary, .btn-ghost {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #4a9c5f;
+  color: white;
+  border: 2px solid #4a9c5f;
+}
+
+.btn-primary:hover {
+  background-color: #3a7c4a;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: #4a9c5f;
+  border: 2px solid #4a9c5f;
+}
+
+.btn-ghost:hover {
+  background-color: #4a9c5f;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Cards Section */
+.about-cards {
+  flex: 0 0 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 4px solid #4a9c5f;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  color: #2c5530;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Quick Travel Tips Section */
+.mini-guides {
+  background-color: #f8f9fa;
+  padding: 80px 0;
+}
+
+.mini-guides h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #2c5530;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.mini-guides h2:after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: #4a9c5f;
+  border-radius: 2px;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.tip-item {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  transition: transform 0.3s ease;
+}
+
+.tip-item:hover {
+  transform: translateY(-5px);
+}
+
+.tip-number {
+  background-color: #4a9c5f;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.tip-item p {
+  margin: 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .about-hero .lead {
+    font-size: 1.2rem;
+  }
+  
+  .about-content {
+    flex-direction: column;
+    margin: 50px auto;
+  }
+  
+  .about-cards {
+    flex: 1;
+    width: 100%;
+  }
+  
+  .cta-row {
+    justify-content: center;
+  }
+  
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero {
+    height: 60vh;
+    min-height: 400px;
+  }
+  
+  .about-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .btn-primary, .btn-ghost {
+    width: 100%;
+  }
+}
